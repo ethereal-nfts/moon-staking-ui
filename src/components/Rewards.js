@@ -17,7 +17,7 @@ export default function Rewards({web3, address, accountDividends, accountReferra
       alert("You must have at least 1 MOON in dividends.")
       return
     }
-    await moonStakingSC.methods.reinvest().send({from:address})
+    await moonStakingSC.methods.reinvest(accountDividends).send({from:address})
     alert("Reinvest request sent. Check your wallet to see when it has completed, then refresh this page.")
   }
 
@@ -30,7 +30,7 @@ export default function Rewards({web3, address, accountDividends, accountReferra
       alert("You must have at least 1 MOON in dividends.")
       return
     }
-    await moonStakingSC.methods.withdraw().send({from:address})
+    await moonStakingSC.methods.withdraw(accountDividends).send({from:address})
     alert("Withdraw request sent. Check your wallet to see when it has completed, then refresh this page.")
   }
 
