@@ -44,7 +44,7 @@ export default function Staking({web3, address, accountMoon, accountMoonStaked, 
   }
 
   const handleUnstake = async ()=>{
-    const requestBN = toBN(stakeValue)
+    const requestBN = toBN(unstakeValue)
     if(!web3 || !address || !moonStakingSC) {
       alert("You are not connected. Connect and try again.")
       return
@@ -57,7 +57,7 @@ export default function Staking({web3, address, accountMoon, accountMoonStaked, 
       alert("Cannot unstake more moon than you have already staked.")
       return
     }
-    await moonStakingSC.methods.unstake(stakeValue).send({from:address})
+    await moonStakingSC.methods.unstake(unstakeValue).send({from:address})
     alert("Unstake request sent. Check your wallet to see when it has completed, then refresh this page.")
   }
 
