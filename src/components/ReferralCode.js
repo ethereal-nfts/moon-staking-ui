@@ -7,7 +7,7 @@ import NumericTxInput from "./NumericTxInput"
 
 export default function ReferralCode({address}) {
   return (
-    <Box w="100%" maxWidth="1200px" bg="white" m="0" ml="auto" mr="auto" mb="40px"
+    <Box w="100%" maxWidth="1200px" bg="white" m="0" ml="auto" mr="auto" mb="40px" mt={["10px","20px","20px","20px"]}
       p={["20px", "20px", "0px"]} pb="20px">
       <CopyToClipboard text={"https://stake.moon.dev/#/"+address}>
         <Button display="block" color="moon.buttonFgGray" bg="moon.buttonBgGray"
